@@ -4,9 +4,11 @@ import Footer from "../Elements/Footer/Footer";
 
 const Root = () => {
     return (
-        <div>
+        <div className="bg-base-100" >
             <Navbar></Navbar>
+            <div className="md:px-10" >                
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

@@ -1,5 +1,5 @@
 import { MdMenuOpen } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const navlinks = <>
     <NavLink to="/" > Home </NavLink>
@@ -8,7 +8,7 @@ const Navbar = () => {
     <NavLink to="/advantage" > Advantage </NavLink>
   </>
   return (
-    <div>
+    <div className="md:px-10">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -32,7 +32,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Log In</a>
+          {/* <a className="btn">Log In</a> */}
+          <Link to="/login"> Log In </Link>
         </div>
       </div>
     </div>

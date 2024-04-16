@@ -9,6 +9,11 @@ import {
 import "./index.css";
 import Root from './Root/Root.jsx';
 import Home from './Component/Home/Home.jsx';
+import About from './Component/About/About.jsx';
+import Contact from './Component/Contact/Contact.jsx';
+import Advantage from './Component/Advantage/Advantage.jsx';
+import LogIn from './Component/LogIn/LogIn.jsx';
+import Register from './Component/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,15 +27,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Home></Home>,
+        element: <About></About>,
       },
       {
         path: "/contact",
-        element: <Home></Home>,
+        element: <Contact></Contact>,
       },
       {
         path: "/advantage",
-        element: <Home></Home>,
+        element: <Advantage> </Advantage>,
+      },
+      {
+        path: "/login",
+        element:<LogIn></LogIn>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register> ,
       },
     ],
   },

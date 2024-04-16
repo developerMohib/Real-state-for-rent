@@ -1,14 +1,16 @@
 
 import { NavLink } from 'react-router-dom';
-
+import { IoSadOutline } from "react-icons/io5";
 const ErrorPage = () => {
     return (
         <div className='checka flex bg-base-300 justify-center h-screen items-center'>
-            <div className='text-center space-y-5'>
-                <h1 className='font-bold text-3xl '> Oops! </h1>
-                <p> Your link path is wrong. Plese check Or go to home </p>
-                <NavLink to='./' > <button className='btn btn-primary my-10'> Go Home </button> </NavLink>
-            </div>
+            <section className="flex items-center h-full sm:p-16 dark:bg-gray-50 dark:text-gray-800">
+	<div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
+    <IoSadOutline className='text-8xl' />
+		<p className="text-3xl">Looks like You are currently Wrong Path</p>
+        <NavLink className=" btn btn-ghost px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50" to="/">Back to homepage</NavLink>
+	</div>
+</section>
         </div>
     );
 };
