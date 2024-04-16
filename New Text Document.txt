@@ -1,0 +1,7 @@
+		
+	Package Name :
+
+	1. Tailwind css 
+	2. Daisy Ui
+	3. React
+	4. React Icon
