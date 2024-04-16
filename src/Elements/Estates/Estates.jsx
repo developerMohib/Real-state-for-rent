@@ -2,7 +2,7 @@ const Estates = () => {
   return (
     <div>
       <div className="w-2/3 mx-auto text-center">
-        <h1 className="text-3xl font-bold">Latest Properties</h1>
+        <h1 className="text-3xl font-bold">Find Your Dream Home</h1>
         <p>
           These are the latest properties in the Sales category. You can create
           the list using the “latest listing shortcode” and show items by

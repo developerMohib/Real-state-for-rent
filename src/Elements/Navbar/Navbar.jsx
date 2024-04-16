@@ -2,14 +2,15 @@ import { MdMenuOpen } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const navlinks = <>
-    <NavLink to="/" > Home </NavLink>
-    <NavLink to="/about" > About Us</NavLink>
-    <NavLink to="/contact" > Contact </NavLink>
-    <NavLink to="/advantage" > Advantage </NavLink>
+    <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded"
+  } to="/" > Home </NavLink>
+    <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" } to="/about" > About Us</NavLink>
+    <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" }  to="/contact" > Contact </NavLink>
+    <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" }  to="/advantage" > Advantage </NavLink>
   </>
   return (
     <div className="md:px-10">
-      <div className="navbar bg-base-100">
+      <div className="navbar p-0 bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,8 +33,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {/* <a className="btn">Log In</a> */}
-          <Link to="/login"> Log In </Link>
+          <Link className="btn btn-outline" to="/login"> Log In </Link>
         </div>
       </div>
     </div>
