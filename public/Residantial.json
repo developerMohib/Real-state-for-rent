@@ -45,7 +45,7 @@
       "area": "1800 sq ft",
       "location": "Old Town, Boston",
       "facilities": ["living room", "fireplace", "patio"],
-      "image": "https://example.com/images/cozy_townhouse.jpg"
+      "image": "https://i.postimg.cc/6TJpkZyH/download2.jpg"
     },
     {
       "id": 5715,
@@ -57,7 +57,7 @@
       "area": "1200 sq ft",
       "location": "Serenity Lake, Montana",
       "facilities": ["living room", "lake access", "fire pit"],
-      "image": "https://example.com/images/lakefront_cabin.jpg"
+      "image": "https://i.postimg.cc/Xv0DrYyT/images1.jpg"
     },
     {
       "id": 5716,
@@ -69,7 +69,7 @@
       "area": "4000 sq ft",
       "location": "Downtown, Chicago",
       "facilities": ["living room", "terrace", "private elevator"],
-      "image": "https://example.com/images/panoramic_penthouse.jpg"
+      "image": "https://i.postimg.cc/5NYPpCBh/images3.jpg"
     },
     {
       "id": 5717,
@@ -81,7 +81,7 @@
       "area": "2200 sq ft",
       "location": "Sunshine Valley, Florida",
       "facilities": ["living room", "pool", "sunroom"],
-      "image": "https://example.com/images/sunny_bungalow.jpg"
+      "image": "https://i.postimg.cc/6TJpkZyH/download2.jpg"
     },
     {
       "id": 5718,
@@ -93,7 +93,7 @@
       "area": "3000 sq ft",
       "location": "Wine Country, California",
       "facilities": ["living room", "vineyard", "porch"],
-      "image": "https://example.com/images/rustic_farmhouse.jpg"
+      "image": "https://i.postimg.cc/Xv0DrYyT/images1.jpg"
     },
     {
       "id": 5719,
@@ -105,7 +105,7 @@
       "area": "3500 sq ft",
       "location": "Bel Air, California",
       "facilities": ["living room", "spa", "private garden"],
-      "image": "https://example.com/images/elegant_duplex.jpg"
+      "image": "https://i.postimg.cc/5NYPpCBh/images3.jpg"
     },
     {
       "id": 5720,
@@ -117,6 +117,6 @@
       "area": "8000 sq ft",
       "location": "Countryside Estate, England",
       "facilities": ["living room", "gardens", "library"],
-      "image": "https://example.com/images/historic_manor.jpg"
+      "image": "https://i.postimg.cc/6TJpkZyH/download2.jpg"
     }
   ]

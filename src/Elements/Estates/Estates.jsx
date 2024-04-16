@@ -1,32 +1,30 @@
 import { useEffect, useState } from "react";
+import JsonDataLoader from "../JsonDataLoader/JsonDataLoader";
 
 const Estates = () => {
-
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  const [dataLen, setDataLen] = useState(5)
 
   useEffect(() => {
-    const fetchData = async () =>{
+    const fetchData = async () => {
       setLoading(true);
-      try{
+      try {
         const response = await fetch(`/public/Residantial.json`);
         const jsonData = await response.json();
         setData(jsonData);
-      }
-      catch (error) {
+      } catch (error) {
         console.error(error.message);
       }
       setLoading(false);
-    }
-
-    console.log(data , ' data from json')
+    };
+    console.log(data, " data from json");
     fetchData();
   }, []);
 
-
   return (
     <div>
-      <div className="w-2/3 mx-auto text-center">
+      <div className="w-2/3 mx-auto text-center my-10">
         <h1 className="text-3xl font-bold">Find Your Dream Home</h1>
         <p>
           These are the latest properties in the Sales category. You can create
@@ -35,36 +33,22 @@ const Estates = () => {
         </p>
       </div>
 
-    {/* Card From Json */}
+      {/* Card From Json */}
 
-    {loading && <div>Loading...</div>}
-    {!loading && (
-      <div className="md:flex flex-wrap gap-6" > 
-        {data.map(item => (
-        <div key={item.id} className="card bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src={item.image}
-          alt="Shoes"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">
-        {item.estate_title} 
-          <div className="badge badge-secondary"> {item.segment_name} </div>
-        </h2>
-        <p> {item.description} </p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+      {loading && <div>Loading...</div>}
+      {!loading && (
+        <div className="test md:grid grid-cols-3 gap-6 my-10 ">
+          {data.slice(0, dataLen).map((item) => (
+            <JsonDataLoader key={item.id} data={item}>
+              {" "}
+            </JsonDataLoader>
+          ))}
         </div>
+      )}
+      {/* Card From Json */}
+      <div className={`text-center my-4 ${dataLen === data.length && 'hidden' } `}>
+        <button onClick={ () => setDataLen(data.length) } className="btn btn-outline">Load More</button>
       </div>
-    </div>
-  ))}
-    </div>
-    )}
-
-    {/* Card From Json */}
     </div>
   );
 };

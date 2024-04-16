@@ -5,3 +5,4 @@
 	2. Daisy Ui
 	3. React
 	4. React Icon
+	5. propTypes
