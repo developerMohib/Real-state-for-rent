@@ -1,4 +1,29 @@
+import { useEffect, useState } from "react";
+
 const Estates = () => {
+
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () =>{
+      setLoading(true);
+      try{
+        const response = await fetch(`/public/Residantial.json`);
+        const jsonData = await response.json();
+        setData(jsonData);
+      }
+      catch (error) {
+        console.error(error.message);
+      }
+      setLoading(false);
+    }
+
+    console.log(data , ' data from json')
+    fetchData();
+  }, []);
+
+
   return (
     <div>
       <div className="w-2/3 mx-auto text-center">
@@ -9,25 +34,37 @@ const Estates = () => {
           specific categories.
         </p>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img
-            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            Shoes!
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
-          </div>
+
+    {/* Card From Json */}
+
+    {loading && <div>Loading...</div>}
+    {!loading && (
+      <div className="md:flex flex-wrap gap-6" > 
+        {data.map(item => (
+        <div key={item.id} className="card bg-base-100 shadow-xl">
+      <figure>
+        <img
+          src={item.image}
+          alt="Shoes"
+        />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">
+        {item.estate_title} 
+          <div className="badge badge-secondary"> {item.segment_name} </div>
+        </h2>
+        <p> {item.description} </p>
+        <div className="card-actions justify-end">
+          <div className="badge badge-outline">Fashion</div>
+          <div className="badge badge-outline">Products</div>
         </div>
       </div>
+    </div>
+  ))}
+    </div>
+    )}
+
+    {/* Card From Json */}
     </div>
   );
 };

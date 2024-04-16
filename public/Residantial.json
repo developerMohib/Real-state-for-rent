@@ -1,0 +1,122 @@
+[
+    {
+      "id": 5711,
+      "estate_title": "Luxury Villa with Ocean View",
+      "segment_name": "Luxury",
+      "description": "Beautiful villa located on the cliffs overlooking the ocean. Perfect for those seeking tranquility and luxury living.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Coastal Heights, California",
+      "facilities": ["living room", "swimming pool", "kitchen"],
+      "image": "https://i.postimg.cc/6TJpkZyH/download2.jpg"
+    },
+    {
+      "id": 5712,
+      "estate_title": "Modern Apartment in Downtown",
+      "segment_name": "Urban",
+      "description": "Contemporary apartment in the heart of the city, offering convenience and style. Close to shopping, dining, and entertainment.",
+      "price": "$3,500/month",
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "City Center, New York",
+      "facilities": ["living room", "gym", "rooftop terrace"],
+      "image": "https://i.postimg.cc/Xv0DrYyT/images1.jpg"
+    },
+    {
+      "id": 5713,
+      "estate_title": "Family Home with Garden",
+      "segment_name": "Suburban",
+      "description": "Charming family home with a spacious garden, ideal for outdoor activities and gatherings. Located in a quiet suburban neighborhood.",
+      "price": "$450,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Green Valley, Texas",
+      "facilities": ["living room", "garden", "garage"],
+      "image": "https://i.postimg.cc/5NYPpCBh/images3.jpg"
+    },
+    {
+      "id": 5714,
+      "estate_title": "Cozy Townhouse in Historic District",
+      "segment_name": "Historic",
+      "description": "Quaint townhouse nestled in the historic district, with charming architecture and easy access to cultural attractions.",
+      "price": "$750,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Old Town, Boston",
+      "facilities": ["living room", "fireplace", "patio"],
+      "image": "https://example.com/images/cozy_townhouse.jpg"
+    },
+    {
+      "id": 5715,
+      "estate_title": "Lakefront Cabin Retreat",
+      "segment_name": "Rural",
+      "description": "Tranquil cabin retreat nestled by the lake, surrounded by nature's beauty. Perfect for weekend getaways and relaxation.",
+      "price": "$300/night",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Serenity Lake, Montana",
+      "facilities": ["living room", "lake access", "fire pit"],
+      "image": "https://example.com/images/lakefront_cabin.jpg"
+    },
+    {
+      "id": 5716,
+      "estate_title": "Penthouse with Panoramic City Views",
+      "segment_name": "Urban",
+      "description": "Luxurious penthouse offering breathtaking panoramic views of the city skyline. Perfect for those who appreciate sophistication and convenience.",
+      "price": "$5,000,000",
+      "status": "sale",
+      "area": "4000 sq ft",
+      "location": "Downtown, Chicago",
+      "facilities": ["living room", "terrace", "private elevator"],
+      "image": "https://example.com/images/panoramic_penthouse.jpg"
+    },
+    {
+      "id": 5717,
+      "estate_title": "Sunny Bungalow with Pool",
+      "segment_name": "Suburban",
+      "description": "Bright and airy bungalow with a sparkling pool, perfect for enjoying sunny days with family and friends. Located in a friendly suburban community.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Sunshine Valley, Florida",
+      "facilities": ["living room", "pool", "sunroom"],
+      "image": "https://example.com/images/sunny_bungalow.jpg"
+    },
+    {
+      "id": 5718,
+      "estate_title": "Rustic Farmhouse with Vineyard",
+      "segment_name": "Rural",
+      "description": "Charming farmhouse nestled amidst lush vineyards, offering a peaceful retreat from the hustle and bustle of city life. Ideal for wine enthusiasts.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Wine Country, California",
+      "facilities": ["living room", "vineyard", "porch"],
+      "image": "https://example.com/images/rustic_farmhouse.jpg"
+    },
+    {
+      "id": 5719,
+      "estate_title": "Elegant Duplex in Exclusive Community",
+      "segment_name": "Luxury",
+      "description": "Sophisticated duplex offering elegance and exclusivity in an upscale community. Features top-of-the-line amenities and stunning architectural design.",
+      "price": "$4,000,000",
+      "status": "sale",
+      "area": "3500 sq ft",
+      "location": "Bel Air, California",
+      "facilities": ["living room", "spa", "private garden"],
+      "image": "https://example.com/images/elegant_duplex.jpg"
+    },
+    {
+      "id": 5720,
+      "estate_title": "Historic Manor House with Gardens",
+      "segment_name": "Historic",
+      "description": "Grand manor house steeped in history and surrounded by beautifully landscaped gardens. A rare opportunity to own a piece of architectural heritage.",
+      "price": "$7,500,000",
+      "status": "sale",
+      "area": "8000 sq ft",
+      "location": "Countryside Estate, England",
+      "facilities": ["living room", "gardens", "library"],
+      "image": "https://example.com/images/historic_manor.jpg"
+    }
+  ]

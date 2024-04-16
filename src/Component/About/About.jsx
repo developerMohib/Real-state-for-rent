@@ -2,6 +2,14 @@ import { GiHomeGarage } from "react-icons/gi";
 const About = () => {
   return (
     <div>
+      <div className="w-2/3 mx-auto text-center my-10">
+        <h1 className="text-3xl font-bold">Find Your Dream Home</h1>
+        <p>
+          These are the latest properties in the Sales category. You can create
+          the list using the “latest listing shortcode” and show items by
+          specific categories.
+        </p>
+      </div>
       <div className="card w-96 bg-base-100 shadow-xl">
         <p>
           <GiHomeGarage className="text-8xl ml-7" />
