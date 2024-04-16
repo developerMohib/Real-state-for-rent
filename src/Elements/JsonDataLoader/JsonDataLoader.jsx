@@ -1,8 +1,13 @@
 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { setDataFromId } from '../../LocalStore/LocalStorage';
 const JsonDataLoader = ( {data} ) => {
-    const {image, estate_title, segment_name,description,facilities,price,status,  } = data;
+    const {image, estate_title, segment_name,description,facilities,price,status, id } = data;
+    const setDataInlocal = () => {
+      // setDataFromId(id)
+      setDataFromId(data)
+    }
     return (
         <div className="card bg-base-100 shadow-xl tests">
               <figure>
@@ -28,7 +33,7 @@ const JsonDataLoader = ( {data} ) => {
                   ))}
                 </div>
                 <div>
-                  <Link> <button className='btn btn-secondary text-black' >View Property</button> </Link>
+                  <Link to={`/details/${id}`} > <button onClick={setDataInlocal} className='btn btn-secondary text-black' >View Property</button> </Link>
                 </div>
               </div>
             </div>

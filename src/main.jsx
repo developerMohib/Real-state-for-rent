@@ -14,6 +14,7 @@ import Contact from './Component/Contact/Contact.jsx';
 import Advantage from './Component/Advantage/Advantage.jsx';
 import LogIn from './Component/LogIn/LogIn.jsx';
 import Register from './Component/Register/Register.jsx';
+import ResiDetails from './Component/ResiDetails/ResiDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register> ,
       },
+      {
+        path: "/details/:id",
+        loader: () => fetch(`/package-lock.json`),
+        element: <ResiDetails> </ResiDetails>,
+      }
     ],
   },
 ]);

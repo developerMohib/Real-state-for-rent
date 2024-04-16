@@ -10,7 +10,7 @@ const Estates = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/public/Residantial.json`);
+        const response = await fetch(`/Residantial.json`);
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
@@ -18,7 +18,7 @@ const Estates = () => {
       }
       setLoading(false);
     };
-    console.log(data, " data from json");
+    // console.log(data, " data from json");
     fetchData();
   }, []);
 
