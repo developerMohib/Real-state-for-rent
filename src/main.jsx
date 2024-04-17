@@ -1,4 +1,4 @@
-import React from "react";
+
 import ReactDOM from "react-dom/client";
 import ErrorPage from "./ErrorPage/ErrorPage.jsx";
 
@@ -15,6 +15,7 @@ import ResiDetails from "./Component/ResiDetails/ResiDetails.jsx";
 import Provider from "./utilitis/Provider.jsx";
 import Profile from "./Component/Profile/Profile.jsx";
 import Private from "./Component/Private/Private.jsx";
+import Update from "./Component/Update/Update.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,14 +56,18 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <Private> <Profile> </Profile> </Private> ,
       },
+      {
+        path: "/update",
+        element: <Private> <Update> </Update> </Private> ,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <>
     <Provider>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  </>
 );

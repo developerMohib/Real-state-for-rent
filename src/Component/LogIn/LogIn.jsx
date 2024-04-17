@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../../utilitis/Provider";
 
 const LogIn = () => {
   const {logInUser,signInGoogle} = useContext(authCustomContext);
   const localNavigate = useNavigate();
+  const location = useLocation() ;
+  console.log('.loging locaion ', location)
 
 
   const handleLogIn = (e) => {
@@ -13,7 +15,6 @@ const LogIn = () => {
       const email = e.target.email.value;
       const password = e.target.password.value;
       e.target.reset()
-      localNavigate('/')
 
       // send email and password in database
       logInUser(email, password)
@@ -21,6 +22,7 @@ const LogIn = () => {
           // Signed up 
           const user = result.user;
           console.log(user, 'user from a')
+          localNavigate(location?.state ? location.state : '/')
         })
         .catch((error) => {
           console.error(error)
