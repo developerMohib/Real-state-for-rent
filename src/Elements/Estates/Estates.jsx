@@ -24,7 +24,7 @@ const Estates = () => {
 
   return (
     <div>
-      <div className="w-2/3 mx-auto text-center my-10">
+      <div className="md:w-2/3 mx-auto text-center my-10">
         <h1 className="text-3xl font-bold">Find Your Dream Home</h1>
         <p>
           These are the latest properties in the Sales category. You can create

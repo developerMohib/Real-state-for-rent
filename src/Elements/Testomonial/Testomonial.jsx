@@ -4,7 +4,7 @@ const Testomonial = () => {
         <div>
             <section className="bg-gray-100 text-gray-800">
 	<div className="container px-6 py-12 mx-auto">
-    <div className="space-y-2 text-center w-2/3 mx-auto">
+    <div className="space-y-2 text-center md:w-2/3 mx-auto">
 			<h2 className="text-3xl font-bold">Testimonials</h2>
 			<p className=" text-sm text-gray-600">Publish the best of your client testimonials and let the world know what a great agent or real estate agency you are. Testimonials build trust.</p>
 		</div>

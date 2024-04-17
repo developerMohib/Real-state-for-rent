@@ -48,8 +48,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        loader: () => fetch(`/package-lock.json`),
         element: <ResiDetails> </ResiDetails>,
+        loader: async () => fetch(`/Residantial.json`),
+
       }
     ],
   },

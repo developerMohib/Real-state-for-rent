@@ -4,7 +4,7 @@ const Advantage = () => {
         <div>
             <section className="py-6 sm:py-12 bg-gray-100 text-gray-800">
 	<div className="container p-6 mx-auto space-y-8">
-		<div className="space-y-2 text-center w-2/3 mx-auto">
+		<div className="space-y-2 text-center md:w-2/3 mx-auto">
 			<h2 className="text-3xl font-bold">Featured Properties</h2>
 			<p className=" text-sm text-gray-600">Here are some listings displayed with the featured property shortcode, which you can use when you have some special properties to present</p>
 		</div>
