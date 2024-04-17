@@ -21,8 +21,7 @@ const Navbar = () => {
           isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded"
         }
         to="/"
-      >
-         
+      > 
         Home 
       </NavLink>
       <NavLink
@@ -30,8 +29,7 @@ const Navbar = () => {
           isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded"
         }
         to="/about"
-      >
-         
+      >  
         About Us
       </NavLink>
       <NavLink
@@ -39,8 +37,7 @@ const Navbar = () => {
           isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded"
         }
         to="/contact"
-      >
-         
+      > 
         Contact 
       </NavLink>
       <NavLink
@@ -62,12 +59,11 @@ const Navbar = () => {
             }
             to="/profile"
           >
-             
             Profile 
           </NavLink>
 
-          <details className="dropdown">
-            <summary className="m-1 ">Settings</summary>
+          <details className="dropdown leading-7 ">
+            <summary className="m-1 ">User Profile</summary>
             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
               <li>
                 <Link
@@ -93,12 +89,20 @@ const Navbar = () => {
               </li>
             </ul>
           </details>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded"
+            }
+            to="/favorite"
+          >
+            Favorite 
+          </NavLink>
         </>
       )}
     </>
   );
   return (
-    <div className="md:px-10">
+    <div className="md:px-10 top-menu sticky top-0 w-[100%] z-50 shadow-lg ">
       <div className="navbar p-0 bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -125,15 +129,17 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <ul>
-            {user ? (
-              <>
-                <span> {user.email} {user.photoURL} </span>
+            {
+            user?.email ? (
+              <div className="flex items-center gap-2 " data-tip={user?.displayName} >
+              {/* <span> {user.email} </span> */}
+                <img className="rounded-full w-14 "  alt="profile" src={user?.photoURL}/>
                 <Link to="/">
                   <button onClick={handleLogOut} className="btn btn-outline">
                     log Out 
                   </button> 
                 </Link>
-              </>
+              </div>
             ) : (
               <>
                 <Link className="btn btn-outline" to="/login">

@@ -4,7 +4,7 @@ import { authCustomContext } from "../../utilitis/Provider";
 
 const Register = () => {
 	const localNavigate = useNavigate();
-	const {createUser} = useContext(authCustomContext)
+	const {createUser, updateProfile} = useContext(authCustomContext)
 
 	const hanldeRegister = (e) => {
 		e.preventDefault()
@@ -21,11 +21,20 @@ const Register = () => {
         .then((result) => {
             // Signed up 
             const user = result.user;
-            console.log(user, 'user from bekaceka')
+            console.log(user, 'user from create user')
           })
           .catch((error) => {
             console.error(error)
           });
+          updateProfile(name, url) 
+          .then((result) => {
+            // Signed up 
+            const user = result.user;
+            console.log(user, 'user from create user')
+          })
+          .catch((error) => {
+            console.error(error)
+          });     
 	}
 
   return (

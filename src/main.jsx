@@ -16,6 +16,7 @@ import Provider from "./utilitis/Provider.jsx";
 import Profile from "./Component/Profile/Profile.jsx";
 import Private from "./Component/Private/Private.jsx";
 import Update from "./Component/Update/Update.jsx";
+import Favorite from "./Component/Favorite/Favorite.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/update",
         element: <Private> <Update> </Update> </Private> ,
+      },
+      {
+        path: "/favorite",
+        element: <Private> <Favorite> </Favorite> </Private> ,
       },
     ],
   },

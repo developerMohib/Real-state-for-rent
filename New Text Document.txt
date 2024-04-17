@@ -9,3 +9,4 @@
 	6. firebase
 	7. moment js
 	8. aos animation
+	9.react-hook-form
