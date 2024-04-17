@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const ResiDetails = () => {
@@ -47,7 +48,7 @@ const ResiDetails = () => {
             className="object-cover w-12 h-12 bg-gray-500 rounded-full shadow"
           />
           <div className="space-y-1">
-            <span className="text-xs">April 03, 2021</span>
+            <span className="text-xs"> { moment().format("dddd, MMMM Do YYYY, h:mm:ss a" )} </span>
             <div className="flex flex-wrap gap-3">
               <p className="text-sm  px-2 py-1 font-semibold rounded-md bg-indigo-600 text-gray-50">
                 {" "}

@@ -21,6 +21,12 @@ const Navbar = () => {
     <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" } to="/about" > About Us</NavLink>
     <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" }  to="/contact" > Contact </NavLink>
     <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" }  to="/advantage" > Advantage </NavLink>
+    {/* Private Link */}
+    {
+      user && <>
+      <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded" }  to="/profile" > Profile </NavLink>
+      </>
+    }
   </>
   return (
     <div className="md:px-10">
@@ -28,7 +34,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <MdMenuOpen />
+            <MdMenuOpen className="text-2xl" />
             </div>
             <ul
               tabIndex={0}
@@ -53,19 +59,14 @@ const Navbar = () => {
             { 
               user ? <>
                 <span> {user.email} </span>
-                <Link to='/' > <button className="btn"> log Out </button> </Link>
-                <button onClick={handleLogOut} className="btn btn-outline" >log out</button>
+                <Link to='/' > <button onClick={handleLogOut} className="btn btn-outline" > log Out </button> </Link>
+                
               </> 
               : <> 
               <Link className="btn btn-outline" to="/login"> Log In </Link>
               </>
             }
       </ul>
-
-
-
-          {/* <button onClick={handleLogOut} className="btn btn-outline" >log out</button> */}
-          {/* <Link className="btn btn-outline" to="/login"> Log In </Link> */}
         </div>
       </div>
     </div>

@@ -13,6 +13,8 @@ import LogIn from "./Component/LogIn/LogIn.jsx";
 import Register from "./Component/Register/Register.jsx";
 import ResiDetails from "./Component/ResiDetails/ResiDetails.jsx";
 import Provider from "./utilitis/Provider.jsx";
+import Profile from "./Component/Profile/Profile.jsx";
+import Private from "./Component/Private/Private.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,8 +48,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <ResiDetails> </ResiDetails>,
+        element: <Private> <ResiDetails> </ResiDetails> </Private>,
         loader: async () => fetch(`/Residantial.json`),
+      },
+      {
+        path: "/profile",
+        element: <Private> <Profile> </Profile> </Private> ,
       },
     ],
   },
