@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { MdMenuOpen } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
+import { authCustomContext } from "../../utilitis/Provider";
 const Navbar = () => {
+
+  const {user, logOut} = useContext(authCustomContext)
+  const handleLogOut = () => {
+    logOut()
+   .then((result) => {
+    console.log(result.user)
+  }).catch((error) => {
+    console.error(error)
+  });
+  }
+
+
   const navlinks = <>
     <NavLink className={({ isActive}) => isActive ? "bg-gray-400 p-2 rounded" : " p-2 rounded"
   } to="/" > Home </NavLink>
@@ -33,7 +47,25 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn btn-outline" to="/login"> Log In </Link>
+
+
+        <ul>
+            { 
+              user ? <>
+                <span> {user.email} </span>
+                <Link to='/' > <button className="btn"> log Out </button> </Link>
+                <button onClick={handleLogOut} className="btn btn-outline" >log out</button>
+              </> 
+              : <> 
+              <Link className="btn btn-outline" to="/login"> Log In </Link>
+              </>
+            }
+      </ul>
+
+
+
+          {/* <button onClick={handleLogOut} className="btn btn-outline" >log out</button> */}
+          {/* <Link className="btn btn-outline" to="/login"> Log In </Link> */}
         </div>
       </div>
     </div>
