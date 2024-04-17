@@ -9,9 +9,9 @@ const Contact = () => {
 			<h2 className="text-4xl font-bold leading-tight lg:text-5xl">Lets talk!</h2>
 			<div className="text-gray-600">Vivamus in nisl metus? Phasellus.</div>
 		</div>
-		<img src="https://mambaui.com/assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
+		<img  data-aos="fade-right" src="https://mambaui.com/assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
 	</div>
-	<form noValidate="" className="space-y-6">
+	<form  data-aos="fade-left" noValidate="" className="space-y-6">
 		<div>
 			<label htmlFor="name" className="text-sm">Full name</label>
 			<input id="name" type="text" placeholder="" className="w-full p-3 rounded " />

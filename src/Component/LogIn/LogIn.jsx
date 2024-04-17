@@ -40,7 +40,7 @@ const LogIn = () => {
 
   return (
     <div>
-      <div className="w-full m-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
+      <div data-aos="fade-up" className="w-full m-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form noValidate="" onSubmit={handleLogIn} className="space-y-6">
         <div className="space-y-1 text-sm">

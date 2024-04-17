@@ -8,7 +8,7 @@ const Advantage = () => {
 			<h2 className="text-3xl font-bold">Featured Properties</h2>
 			<p className=" text-sm text-gray-600">Here are some listings displayed with the featured property shortcode, which you can use when you have some special properties to present</p>
 		</div>
-		<div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+		<div data-aos="fade-up" data-aos-duration="3000" className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
 			<article className="flex flex-col bg-gray-50">
 				<a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
 					<img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://source.unsplash.com/200x200/?fashion?1" />

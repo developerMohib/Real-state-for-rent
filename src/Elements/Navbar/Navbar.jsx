@@ -127,11 +127,9 @@ const Navbar = () => {
           <ul>
             {user ? (
               <>
-                <span> {user.email} </span>
+                <span> {user.email} {user.photoURL} </span>
                 <Link to="/">
-                   
                   <button onClick={handleLogOut} className="btn btn-outline">
-                     
                     log Out 
                   </button> 
                 </Link>
@@ -139,7 +137,6 @@ const Navbar = () => {
             ) : (
               <>
                 <Link className="btn btn-outline" to="/login">
-                   
                   Log In 
                 </Link>
               </>

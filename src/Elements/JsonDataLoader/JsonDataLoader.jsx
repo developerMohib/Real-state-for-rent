@@ -9,7 +9,7 @@ const JsonDataLoader = ( {data} ) => {
       setDataFromId(data)
     }
     return (
-        <div className="card bg-base-100 shadow-xl tests">
+        <div data-aos="fade-up" className="card bg-base-100 shadow-xl tests">
               <figure>
                 <img src={image} alt="Property" />
               </figure>

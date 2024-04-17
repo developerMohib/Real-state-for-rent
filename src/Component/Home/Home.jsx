@@ -2,6 +2,9 @@ import Estates from "../../Elements/Estates/Estates";
 import Slider from "../../Elements/Slider/Slider";
 import Testomonial from "../../Elements/Testomonial/Testomonial";
 import Advantage from "../Advantage/Advantage";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Home = () => {
     return (
