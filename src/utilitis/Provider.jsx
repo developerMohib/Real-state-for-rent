@@ -18,6 +18,7 @@ const Provider = ({children}) => {
   const notifyLogIn = () => toast("Log in Successfully!");
   const notifyLogOut = () => toast("Log Out Successfully!");
   const notifyRegister = () => toast("Register Successfully!");
+  const pleaseRegister = () => toast.warning(" Please Register !");
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -58,7 +59,20 @@ const Provider = ({children}) => {
         return () => unsubscribe()
     },[])
 
-    const authInfo = {user,createUser,logInUser,signInGoogle,logOut,loading,updateProfileFromUser,signInGithub, notifyLogIn, notifyLogOut,notifyRegister }
+    const authInfo = {
+        user,
+        createUser,
+        logInUser,
+        signInGoogle,
+        logOut,
+        loading,
+        updateProfileFromUser,
+        signInGithub, 
+        notifyLogIn, 
+        notifyLogOut,
+        notifyRegister,
+        pleaseRegister
+    }
 
     return (
         <authCustomContext.Provider value={authInfo}>

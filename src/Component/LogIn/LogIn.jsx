@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const LogIn = () => {
   const [showPass, setShowPass] = useState(false);
 
-  const { logInUser, signInGoogle, signInGithub, notifyLogIn } =
+  const { logInUser, signInGoogle, signInGithub, notifyLogIn, pleaseRegister } =
     useContext(authCustomContext);
   const localNavigate = useNavigate();
   const location = useLocation();
@@ -27,11 +27,12 @@ const LogIn = () => {
         const user = result.user;
         console.log(user, "user from a");
         localNavigate(location?.state ? location.state : "/");
+        notifyLogIn();
       })
       .catch((error) => {
-        console.error(error);
+        pleaseRegister()
+        console.error(error.message, 'log in page');
       });
-    notifyLogIn();
   };
   const hanldeGoogle = () => {
     signInGoogle()
