@@ -1,9 +1,11 @@
 
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet-async';
 const SelectedHome = ({data}) => {
-    const {image, estate_title, segment_name,description,facilities,price,status, id } = data;
+    const {image, estate_title, segment_name,description,facilities,price,status } = data;
     return (
         <div data-aos="fade-up" className="card bg-base-100 shadow-xl tests">
+          <Helmet> <title> Favorite | Find Your Dream Home </title> </Helmet>
               <figure>
                 <img src={image} alt="Property" />
               </figure>

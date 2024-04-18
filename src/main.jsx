@@ -1,4 +1,3 @@
-
 import ReactDOM from "react-dom/client";
 import ErrorPage from "./ErrorPage/ErrorPage.jsx";
 
@@ -17,6 +16,7 @@ import Profile from "./Component/Profile/Profile.jsx";
 import Private from "./Component/Private/Private.jsx";
 import Update from "./Component/Update/Update.jsx";
 import Favorite from "./Component/Favorite/Favorite.jsx";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -50,20 +50,40 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Private> <ResiDetails> </ResiDetails> </Private>,
+        element: (
+          <Private>
+            {" "}
+            <ResiDetails> </ResiDetails>{" "}
+          </Private>
+        ),
         loader: async () => fetch(`/Residantial.json`),
       },
       {
         path: "/profile",
-        element: <Private> <Profile> </Profile> </Private> ,
+        element: (
+          <Private>
+            {" "}
+            <Profile> </Profile>{" "}
+          </Private>
+        ),
       },
       {
         path: "/update",
-        element: <Private> <Update> </Update> </Private> ,
+        element: (
+          <Private>
+            {" "}
+            <Update> </Update>{" "}
+          </Private>
+        ),
       },
       {
         path: "/favorite",
-        element: <Private> <Favorite> </Favorite> </Private> ,
+        element: (
+          <Private>
+            {" "}
+            <Favorite> </Favorite>{" "}
+          </Private>
+        ),
       },
     ],
   },
@@ -71,8 +91,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <Provider>
-      <RouterProvider router={router} />
-    </Provider>
+    <HelmetProvider>
+      <Provider>
+        <RouterProvider router={router} />
+      </Provider>
+    </HelmetProvider>
   </>
 );

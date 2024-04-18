@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { authCustomContext } from "../../utilitis/Provider";
+import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
     const {user} = useContext(authCustomContext);
     console.log(user , 'user form profile')
   return (
     <div>
+      <Helmet> <title> Profile | Find Your Dream Home </title> </Helmet>
       <div
         data-aos="fade-up"
         className="card card-side bg-base-100 shadow-xl my-10 "

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../../utilitis/Provider";
 import { FaFaceGrin, FaFaceFrown } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState('');
@@ -21,47 +22,48 @@ const Register = () => {
     const url = e.target.url.value;
     e.target.reset();
 
-    if (password.length < 6) {
+  if (password.length < 6) {
       setRegisterError('Password should be at least 6 characters long.');
       return;
   }
   
-  if (!/[A-Z]/.test(password)) {
+  else if (!/[A-Z]/.test(password)) {
       setRegisterError("Your password must contain at least one capital letter.");
       return;
   }
   
-  if (!/[a-z]/.test(password)) {
+  else if (!/[a-z]/.test(password)) {
       setRegisterError("Your password must contain at least one lowercase letter.");
       return;
   }
   
-  if (!/\d/.test(password)) {
+  else if(!/\d/.test(password)) {
       setRegisterError("Your password must contain at least one digit.");
       return;
   }
   
     localNavigate("/");
     setRegisterError('');
-    notifyRegister();
+    
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user, "user from create user");
 
-
+        notifyRegister()
         updateProfileFromUser(name, url)
         .then((result) => {
-          // Signed up
+          notifyRegister()
           const user = result.user;
           console.log(user, "user from create user");
+          
         })
 
       })
       .catch((error) => {
-        alert(error.message)
-        setRegisterError(error.message)
+        // alert( "allready created please log in ")
+        setRegisterError(error.message);
       });
 
 
@@ -69,6 +71,7 @@ const Register = () => {
 
   return (
     <div>
+      <Helmet> <title> Register | Find Your Dream Home </title> </Helmet>
       <div
         data-aos="fade-up"
         className="w-full m-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800"
@@ -79,7 +82,7 @@ const Register = () => {
             <label htmlFor="email" className="block text-gray-600">
               Email
             </label>
-            <input
+            <input required
               type="email"
               name="email"
               id="email"
@@ -91,7 +94,7 @@ const Register = () => {
             <label htmlFor="username" className="block text-gray-600">
               Username
             </label>
-            <input
+            <input required
               type="text"
               name="name"
               id="username"

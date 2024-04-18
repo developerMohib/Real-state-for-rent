@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../../utilitis/Provider";
 import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import { FaFaceGrin, FaFaceFrown } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const LogIn = () => {
   const [showPass, setShowPass] = useState(false);
@@ -47,15 +48,16 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        notifyLogIn();
       })
       .catch((error) => {
         console.error(error);
       });
-    notifyLogIn();
   };
 
   return (
     <div>
+      <Helmet> <title> Log in | Find Your Dream Home </title> </Helmet>
       <div
         data-aos="fade-up"
         className="w-full m-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800"
@@ -66,7 +68,7 @@ const LogIn = () => {
             <label htmlFor="email" className="block text-gray-600">
               Email
             </label>
-            <input
+            <input required
               type="email"
               name="email"
               id="email"
@@ -79,7 +81,7 @@ const LogIn = () => {
               Password
             </label>
             <div className="flex relative ">
-              <input
+              <input required
                 type={showPass ? "text" : "password"}
                 name="password"
                 id="password"

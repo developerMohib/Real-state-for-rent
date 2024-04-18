@@ -1,4 +1,5 @@
 import moment from "moment";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const ResiDetails = () => {
@@ -20,6 +21,7 @@ const ResiDetails = () => {
 
   return (
     <div>
+      <Helmet> <title> Residance Details | Find Your Dream Home </title> </Helmet>
         <div className="w-2/3 mx-auto text-center my-10">
         <h1 className="text-3xl font-bold">Find Your Dream Home</h1>
         <p>

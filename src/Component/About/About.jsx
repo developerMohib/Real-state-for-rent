@@ -1,7 +1,9 @@
+import { Helmet } from "react-helmet-async";
 import { GiHomeGarage } from "react-icons/gi";
 const About = () => {
   return (
     <div>
+      <Helmet> <title> About | Find Your Dream Home </title> </Helmet>
       <div data-aos="zoom-in" className="w-2/3 mx-auto text-center my-10">
         <h1 className="text-3xl font-bold">Find Your Dream Home</h1>
         <p>

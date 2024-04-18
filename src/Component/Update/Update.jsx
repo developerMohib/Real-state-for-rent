@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { authCustomContext } from "../../utilitis/Provider";
+import { Helmet } from "react-helmet-async";
 
 const Update = () => {
     const {user, updateProfileFromUser} = useContext(authCustomContext);
@@ -18,6 +19,7 @@ const Update = () => {
 
   return (
     <div>
+      <Helmet> <title> Update Profile | Find Your Dream Home </title> </Helmet>
       <div
         data-aos="fade-up"
         className="card card-side bg-base-100 shadow-xl my-10 "
