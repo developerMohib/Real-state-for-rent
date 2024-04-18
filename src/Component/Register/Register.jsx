@@ -19,6 +19,7 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const url = e.target.url.value;
+    e.target.reset();
 
     if (password.length < 6) {
       setRegisterError('Password should be at least 6 characters long.');
@@ -40,8 +41,6 @@ const Register = () => {
       return;
   }
   
-
-    e.target.reset();
     localNavigate("/");
     setRegisterError('');
     notifyRegister();
@@ -50,21 +49,22 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user, "user from create user");
+
+
+        updateProfileFromUser(name, url)
+        .then((result) => {
+          // Signed up
+          const user = result.user;
+          console.log(user, "user from create user");
+        })
+
       })
       .catch((error) => {
         alert(error.message)
         setRegisterError(error.message)
       });
 
-    updateProfileFromUser(name, url)
-      .then((result) => {
-        // Signed up
-        const user = result.user;
-        console.log(user, "user from create user");
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
+
   };
 
   return (

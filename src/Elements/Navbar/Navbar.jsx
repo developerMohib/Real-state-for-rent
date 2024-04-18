@@ -14,6 +14,7 @@ const Navbar = () => {
         console.error(error);
       });
   };
+  console.log(user , 'navbar')
 
   const navlinks = (
     <>
@@ -52,6 +53,7 @@ const Navbar = () => {
       </NavLink>
 
       {/* Private Link */}
+      
       {user && (
         <>
           <NavLink
@@ -132,9 +134,9 @@ const Navbar = () => {
           <ul>
             {
             user ? (
-              <div className="flex items-center gap-2 " >
+              <div className="flex items-center gap-2" >
               {/* <span> {user.email} </span> */}
-                <img className="rounded-full w-14 " data-tip={user?.displayName} alt="profile" src={user?.photoURL}/>
+                <span className="tooltip tooltip-bottom " data-tip={user?.displayName} > <img className="rounded-full w-14" alt="profile" src={user?.photoURL}/> </span>
                 <Link to="/">
                   <button onClick={handleLogOut} className="btn btn-outline">
                     log Out 

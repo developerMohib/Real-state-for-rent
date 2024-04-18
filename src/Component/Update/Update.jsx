@@ -2,8 +2,20 @@ import { useContext } from "react";
 import { authCustomContext } from "../../utilitis/Provider";
 
 const Update = () => {
-    const {user, url} = useContext(authCustomContext);
-    console.log(user , 'user form profile')
+    const {user, updateProfileFromUser} = useContext(authCustomContext);
+    console.log(user , 'user form profile');
+
+    const updateProfilePicture = (e) => {
+     
+      const photoLink = e.target.url.value; 
+      const name = e.target.name.value;
+      console.log(photoLink, name);
+      e.target.reset();
+
+      updateProfileFromUser(name, photoLink)
+    }
+
+
   return (
     <div>
       <div
@@ -11,20 +23,22 @@ const Update = () => {
         className="card card-side bg-base-100 shadow-xl my-10 "
       >
         <figure>
-          <img
-            src={user.photoURL}
-            alt="Movie"
+          <img className="w-[6rem] rounded-md "
+            src={user?.photoURL}
+            alt="Profile"
           />
         </figure>
         <div className="card-body">
           <h2 className="card-title"> Name : {user.displayName} </h2>
           <p> Email : {user.email} </p>
-          <p> Photo Url : {url} </p>
+          <p> Photo Url : {user?.photoURL} </p>
         </div>
       </div>
 
       <div>
-      <form noValidate="" className="space-y-6">
+
+
+      <form onSubmit={updateProfilePicture} noValidate="" className="space-y-6">
       <div className="space-y-1 text-sm">
             <label htmlFor="username" className="block text-gray-600">
               Username
