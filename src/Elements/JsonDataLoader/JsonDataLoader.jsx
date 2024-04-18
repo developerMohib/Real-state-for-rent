@@ -10,17 +10,16 @@ const JsonDataLoader = ( {data} ) => {
     }
     return (
         <div data-aos="fade-up" className="card bg-base-100 shadow-xl tests">
+              <div className="indicator" >
+          <span className="indicator-item badge badge-secondary translate-x-5 translate-y-px rotate-45 "> {segment_name} </span> 
               <figure>
                 <img src={image} alt="Property" />
               </figure>
+              </div>
               <div className="card-body">
               <p>Status: {status} </p>
                 <h2 className="card-title">
                   {estate_title}
-                  <div className="badge badge-secondary">
-                    {" "}
-                    {segment_name}{" "}
-                  </div>
                 </h2>
                 <p>{price}</p>
                 <p>{description}</p>
