@@ -132,9 +132,9 @@ const Navbar = () => {
           <ul>
             {
             user ? (
-              <div className="flex items-center gap-2 " data-tip={user?.displayName} >
+              <div className="flex items-center gap-2 " >
               {/* <span> {user.email} </span> */}
-                <img className="rounded-full w-14 "  alt="profile" src={user?.photoURL}/>
+                <img className="rounded-full w-14 " data-tip={user?.displayName} alt="profile" src={user?.photoURL}/>
                 <Link to="/">
                   <button onClick={handleLogOut} className="btn btn-outline">
                     log Out 
