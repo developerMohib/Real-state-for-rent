@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import auth from "../Firebase/Firebase.init";
@@ -6,11 +6,18 @@ import { GoogleAuthProvider, GithubAuthProvider} from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
 
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const authCustomContext = createContext(null);
 
 const Provider = ({children}) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    
+  const notifyLogIn = () => toast("Log in Successfully!");
+  const notifyLogOut = () => toast("Log Out Successfully!");
+  const notifyRegister = () => toast("Register Successfully!");
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -36,8 +43,8 @@ const Provider = ({children}) => {
             console.error(error);
           }); 
     }
-    const updateProfile = (name, url) => {
-        updateProfile(auth.currentUser, {
+    const updateProfileFromUser = (name, url) => {
+        updateProfile (auth.currentUser, {
             displayName: name, 
             photoURL: url,
         });
@@ -51,11 +58,12 @@ const Provider = ({children}) => {
         return () => unsubscribe()
     },[])
 
-    const authInfo = {user,createUser,logInUser,signInGoogle,logOut,loading,updateProfile,signInGithub}
+    const authInfo = {user,createUser,logInUser,signInGoogle,logOut,loading,updateProfileFromUser,signInGithub, notifyLogIn, notifyLogOut,notifyRegister }
 
     return (
         <authCustomContext.Provider value={authInfo}>
             {children}
+          <ToastContainer />
         </authCustomContext.Provider>
     );
 };

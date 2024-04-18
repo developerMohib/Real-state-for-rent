@@ -3,8 +3,9 @@ import { MdMenuOpen } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import { authCustomContext } from "../../utilitis/Provider";
 const Navbar = () => {
-  const { user, logOut } = useContext(authCustomContext);
+  const { user, logOut, notifyLogOut } = useContext(authCustomContext);
   const handleLogOut = () => {
+    notifyLogOut()
     logOut()
       .then((result) => {
         console.log(result.user);
@@ -130,7 +131,7 @@ const Navbar = () => {
         <div className="navbar-end">
           <ul>
             {
-            user?.email ? (
+            user ? (
               <div className="flex items-center gap-2 " data-tip={user?.displayName} >
               {/* <span> {user.email} </span> */}
                 <img className="rounded-full w-14 "  alt="profile" src={user?.photoURL}/>

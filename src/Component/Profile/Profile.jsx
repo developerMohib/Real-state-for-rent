@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { authCustomContext } from "../../utilitis/Provider";
 
 const Profile = () => {
-    const {user} = useContext(authCustomContext);
+    const {user, url} = useContext(authCustomContext);
     console.log(user , 'user form profile')
   return (
     <div>
@@ -19,6 +19,7 @@ const Profile = () => {
         <div className="card-body">
           <h2 className="card-title"> Name : {user.displayName} </h2>
           <p> Email : {user.email} </p>
+          <p> Photo Url : {url} </p>
         </div>
       </div>
     </div>

@@ -1,59 +1,68 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../../utilitis/Provider";
-import { FaGithub,FaGoogle, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
+import { FaFaceGrin, FaFaceFrown } from "react-icons/fa6";
 
 const LogIn = () => {
-  const {logInUser,signInGoogle,signInGithub} = useContext(authCustomContext);
-  const localNavigate = useNavigate();
-  const location = useLocation() ;
-  console.log('.loging locaion ', location)
+  const [showPass, setShowPass] = useState(false);
 
+  const { logInUser, signInGoogle, signInGithub, notifyLogIn } =
+    useContext(authCustomContext);
+  const localNavigate = useNavigate();
+  const location = useLocation();
+  // console.log('.loging locaion ', location)
 
   const handleLogIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    e.target.reset();
 
-      e.preventDefault();
-      const email = e.target.email.value;
-      const password = e.target.password.value;
-      e.target.reset()
-
-      // send email and password in database
-      logInUser(email, password)
+    // send email and password in database
+    logInUser(email, password)
       .then((result) => {
-          // Signed up 
-          const user = result.user;
-          console.log(user, 'user from a')
-          localNavigate(location?.state ? location.state : '/')
-        })
-        .catch((error) => {
-          console.error(error)
-        });
-  }
+        // Signed up
+        const user = result.user;
+        console.log(user, "user from a");
+        localNavigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    notifyLogIn();
+  };
   const hanldeGoogle = () => {
     signInGoogle()
       .then((result) => {
-        console.log(result.user)
+        console.log(result.user);
       })
       .catch((error) => {
-        console.error(error)
-      })
-  }
+        console.error(error);
+      });
+    notifyLogIn();
+  };
   const handleGithub = () => {
     signInGithub()
-    .then((result) => {
-      const user = result.user;
-      console.log(user)
-    }).catch((error) => {
-      console.error(error)
-    });
-  }
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    notifyLogIn();
+  };
 
   return (
     <div>
-      <div data-aos="fade-up" className="w-full m-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
+      <div
+        data-aos="fade-up"
+        className="w-full m-auto max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800"
+      >
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form noValidate="" onSubmit={handleLogIn} className="space-y-6">
-        <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm">
             <label htmlFor="email" className="block text-gray-600">
               Email
             </label>
@@ -69,13 +78,22 @@ const LogIn = () => {
             <label htmlFor="password" className="block text-gray-600">
               Password
             </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-indigo-600"
-            />
+            <div className="flex relative ">
+              <input
+                type={showPass ? "text" : "password"}
+                name="password"
+                id="password"
+                placeholder="Password"
+                className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-indigo-600"
+              />
+              <span onClick={() => setShowPass(!showPass)}>
+                {showPass ? (
+                  <FaFaceGrin className="text-2xl text-secondary absolute right-0 top-2 " />
+                ) : (
+                  <FaFaceFrown className="text-2xl text-secondary absolute right-0 top-2 " />
+                )}
+              </span>
+            </div>
             <div className="flex justify-end text-xs text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
@@ -94,15 +112,24 @@ const LogIn = () => {
           <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button onClick={hanldeGoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
-          <FaGoogle />
+          <button
+            onClick={hanldeGoogle}
+            aria-label="Log in with Google"
+            className="p-3 rounded-sm"
+          >
+            <FaGoogle />
           </button>
           <button aria-label="Log in with Twitter" className="p-3 rounded-sm">
-          <FaTwitter />
+            <FaTwitter />
           </button>
-          <button onClick={handleGithub} aria-label="Log in with GitHub" className="p-3 rounded-sm">
-          <FaGithub />
+          <button
+            onClick={handleGithub}
+            aria-label="Log in with GitHub"
+            className="p-3 rounded-sm"
+          >
+            <FaGithub />
           </button>
+          {/* <ToastContainer /> */}
         </div>
         <p className="text-xs text-center sm:px-6 text-gray-600">
           Dont have an account?
