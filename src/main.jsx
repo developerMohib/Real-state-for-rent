@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/advantage",
-        element: <Advantage> </Advantage>,
+        element: <Private> <Advantage> </Advantage> </Private>,
       },
       {
         path: "/login",
@@ -52,7 +52,6 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: (
           <Private>
-            {" "}
             <ResiDetails> </ResiDetails>{" "}
           </Private>
         ),

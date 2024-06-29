@@ -57,7 +57,6 @@ const Register = () => {
           notifyRegister()
           const user = result.user;
           console.log(user, "user from create user");
-          
         })
 
       })

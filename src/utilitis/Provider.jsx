@@ -29,11 +29,11 @@ const Provider = ({children}) => {
     }
     const signInGoogle = () => {
         setLoading(true);
-        signInWithPopup(auth, googleProvider)
+        return signInWithPopup(auth, googleProvider)
     }
     const signInGithub = () => {
         setLoading(true);
-        signInWithPopup(auth, gitHubProvider)
+        return signInWithPopup(auth, gitHubProvider)
     }
     const logOut = () => {
         setLoading(true)

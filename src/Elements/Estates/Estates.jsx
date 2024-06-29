@@ -4,6 +4,7 @@ import JsonDataLoader from "../JsonDataLoader/JsonDataLoader";
 const Estates = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  
   const [dataLen, setDataLen] = useState(5)
 
   useEffect(() => {
